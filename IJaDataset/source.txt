@@ -1,0 +1,19 @@
+public class DUMMY_CLASS_FOO {
+    public Publication(ContainerSource containerSource) throws Exception {
+        this.containerSource = containerSource;
+        DataSource cont = containerSource.getDataSource("META-INF/container.xml");
+        if (cont == null) throw new IOException("Not an EPUB file: META-INF/container.xml missing");
+        String opfName = processOCF(cont.getInputStream());
+        opf = new OPFResource(this, opfName);
+        resourcesByName.put(opfName, opf);
+        opf.load(containerSource, opfName);
+        Iterator entries = containerSource.getResourceList();
+        while (entries.hasNext()) {
+            String name = (String) entries.next();
+            if (name.startsWith("META-INF/") || name.equals("mimetype") || name.equals(opfName)) continue;
+            if (resourcesByName.get(name) == null) {
+                loadMissingResource(name);
+            }
+        }
+    }
+}
