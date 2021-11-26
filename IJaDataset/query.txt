@@ -1,0 +1,12 @@
+public class DUMMY_CLASS_FOO {
+    public Publication(ContainerSource containerSource) throws Exception {
+        this.containerSource = containerSource;
+        DataSource cont = containerSource.getDataSource(META-INFcontainer.xml);
+        if (cont == null) throw new IOException(Not an EPUB file META-INFcontainer.xml missing);
+        String opfName = processOCF(cont.getInputStream());
+        opf = new OPFResource(this, opfName);
+        resourcesByName.put(opfName, opf);
+        opf.load(containerSource, opfName);
+        Iterator entries = containerSource.getResourceList();
+    }
+}
