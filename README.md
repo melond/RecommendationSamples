@@ -6,6 +6,8 @@ In this repository, we show some examples or details about sampled data used in 
 [submission.rar](https://github.com/melond/RecommendationSamples/blob/main/OJNUAA/submission.rar) includes the original source files of OJNUAA, it records the submitted source files and their related information. We have filtered and organized these code files for recommendation task, and [200.rar](https://github.com/melond/RecommendationSamples/blob/main/OJNUAA/200.rar) contains the dataset we used in our experiment. We randomly choose 20 files under each folder as queries. [recommendNUAA.py](https://github.com/melond/RecommendationSamples/blob/main/OJNUAA/recommendNUAA.py) shows the general process.
 
 # [OJSystem](https://github.com/melond/RecommendationSamples/tree/main/OJSystem):
+The original source code is from:
+[Convolutional Neural Networks over Tree Structures for Programming Language Processing](https://www.researchgate.net/publication/265908651_Convolutional_Neural_Network_over_Tree_Structures_for_Programming_Language_Processing)
 Similar as OJNUAA, we uploaded the [recommending process](https://github.com/melond/RecommendationSamples/blob/main/OJSystem/recommend.py).
 
 # [IJaDataset](https://github.com/melond/RecommendationSamples/tree/main/IJaDataset):
